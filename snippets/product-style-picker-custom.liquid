@@ -1,0 +1,69 @@
+{% comment %}
+  Renders product style picker based on related products
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the style picker is associated.
+  Usage:
+  {% render 'product-style-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+
+{%- if product.metafields.custom.design_group -%}
+  {% assign related_products_metaobject = product.metafields.custom.design_group.value %}
+  {% assign related_products = related_products_metaobject.product_grouping.value %}
+
+  {%- if block.settings.picker_type == 'button' -%}
+    <!-- Styles as radio buttons -->
+    {% assign desired_order = "T-Shirt,V-Neck,Long Sleeves,Sweatshirt,Hoodie,Tank Top,Tumbler" | split: "," %}
+    
+    <form id="styleForm" action="#" method="GET">
+            <div class="product-form__input product-form__input--pill">
+
+        <label for="ProductSelect-Style" class="form__label">Style</label>
+        <fieldset class="js product-form__input">
+            {% for type in desired_order %}
+                {% assign related_product = related_products | where: "type", type | first %}
+                {% if related_product %}
+                    <input 
+                        type="radio" 
+                        id="related_product-{{ related_product.id }}" 
+                        name="related_product" 
+                        value="{{ related_product.url }}"
+                        {% if product.handle == related_product.handle %}checked{% endif %}
+                        onchange="document.getElementById('styleForm').action=this.value; document.getElementById('styleForm').submit();"
+                    >
+                    <label for="related_product-{{ related_product.id }}">{{ related_product.type }}</label>
+                {% endif %}
+            {% endfor %}
+        </fieldset>
+        <script type="application/json">
+            {{ related_products | json }}
+        </script>
+            </div>
+    </form>
+
+
+  {%- else -%}
+    <!-- Styles as dropdown -->
+    <form id="styleForm">
+      <div class="product-form__input product-form__input--dropdown">
+        <label for="ProductSelect-Style" class="form__label">Style</label>
+        <div class="select">
+          <select 
+            id="ProductSelect-Style" 
+            class="select__select" 
+            onchange="document.getElementById('styleForm').action=this.value; document.getElementById('styleForm').submit();"
+            >
+            {% for related_product in related_products %}
+              <option value="{{ related_product.url }}" {% if product.handle == related_product.handle %}selected{% endif %}>
+                {{ related_product.type }}
+              </option>
+            {% endfor %}
+          </select>
+          {% render 'icon-caret' %}
+        </div>
+      </div>
+    </form>
+  {%- endif -%}
+{%- endif -%}
