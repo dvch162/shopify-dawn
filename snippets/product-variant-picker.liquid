@@ -19,7 +19,34 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
+
+
+
+    {% assign entry_title = "variant-swatch-mapping" %} {% comment %}Setting: Name of Metaobject entry{% endcomment %}
+  
+{% assign target_entry = nil %}
+{% for entry in shop.metaobjects.variant_swatch_map.values %}
+  {% if entry.title == entry_title %}
+    {% assign target_entry = entry %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if target_entry %}
+  {% assign variant_images_data = target_entry.variant_images_json %}
+{% else %}
+  {% assign variant_images_data = nil %}
+{% endif %}
+
+    
     {%- for option in product.options_with_values -%}
+
+
+
+
+
+
+      
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
@@ -48,8 +75,35 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
+
+
+        {% assign variant_options_images = variant_images_data.value | where: "variant_name", option.name %}
+{% assign special_handling = false %}
+{% if variant_options_images.size > 0 %}
+  {% assign special_handling = true %}
+{% endif %}
+
+<fieldset class="js product-form__input product-form__input--pill {% if special_handling %}product-form__special-input{% endif %}">
+  {% if special_handling %}
+    <legend class="form__label">
+        {{ option.name }}: 
+        <span id="selected{{ option.name }}">{{ option.selected_value }}</span>
+    </legend>
+    {% render 'product-variant-swatch-custom', product: product, option: option, variant_images_data: variant_options_images %}
+  {% else %}
+    <legend class="form__label">{{ option.name }}</legend>
+    {% render 'product-variant-options',
+      product: product,
+      option: option,
+      block: block,
+      picker_type: picker_type
+    %}
+  {% endif %}
+</fieldset>
+
         
-        <fieldset class="js product-form__input product-form__input--pill">
+        
+       {% comment %}  <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
@@ -57,7 +111,7 @@
             block: block,
             picker_type: picker_type
           %}
-        </fieldset>
+        </fieldset> {% endcomment %} 
 
 
         
