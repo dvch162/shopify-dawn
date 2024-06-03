@@ -150,5 +150,7 @@
     <script type="application/json">
       {{ product.variants | json }}
     </script>
+    <script src="{{ 'product-variant-selection-custom.js' | asset_url }}" defer="defer"></script>
+
   </variant-selects>
 {%- endunless -%}
