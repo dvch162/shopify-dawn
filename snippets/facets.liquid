@@ -726,6 +726,31 @@
                                       </svg>
                                     {%- endif %}
 
+
+
+{% for variant_option_name in filter_param_names %}                  
+    {% if filter.param_name == variant_option_name %}                         
+        {% assign current_variant = nil %}
+        {% for variant in variant_images %}
+           {% if variant.variant_value == value.label %}
+              {% assign current_variant = variant %}
+              {% break %}
+           {% endif %}
+        {% endfor %}   
+        <div class="variant-filter-swatch" 
+             style="
+               {% if current_variant.color_swatch != blank %}background-color: {{ current_variant.color_swatch }};{% endif %}
+               {% if current_variant.variant_swatch != blank %}background-image: url('{{ current_variant.variant_swatch | file_url }}');{% endif %}
+             "
+        >
+        </div>
+    {% endif %}
+{% endfor %}
+
+
+
+
+                                          
                                     {{ text_value }}
                                   </label>
                                 {% endif %}
