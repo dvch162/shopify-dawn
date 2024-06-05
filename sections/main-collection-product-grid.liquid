@@ -144,12 +144,16 @@
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
+              	data-section-id="{{ section.id }}"
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
             >
+
+
+              
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -162,7 +166,7 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+                  {% render 'card-product-custom',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -410,3 +414,23 @@
   ]
 }
 {% endschema %}
+
+<script>
+var variantDataMap{{ section.id | replace: '-', '_' }} = {
+  {% assign isFirstVariant = true %}  
+  {% for product in collection.products %}
+    {% for variant in product.variants %}
+      {% if variant.featured_media %}
+        {% unless isFirstVariant %},{% endunless %}
+        "{{ variant.id }}": {
+          "imageUrl": "{{ variant.featured_media | img_url: 'master' }}",
+          "productUrl": "{{ product.url | append: '?variant=' | append: variant.id }}"
+        }
+        {% assign isFirstVariant = false %} 
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+};
+</script>
+{{ 'card-product-variant-selection-custom.js' | asset_url | script_tag }}
+
