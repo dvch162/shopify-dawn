@@ -119,6 +119,15 @@
                 endif
               %}
 
+
+
+
+
+
+
+
+
+              
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
                   <details
@@ -215,6 +224,36 @@
                               </span>
                             {%- endcapture -%}
 
+
+
+                            
+
+{% assign entry_title = "variant-swatch-mapping" %} {% comment %}Setting: Name of Metaobject entry{% endcomment %}
+{% assign filter_param_names = "filter.v.option.color,filter.v.option.material" | split: "," %} {% comment %}Setting: Name of Filter Type{% endcomment %}
+                            
+
+{% for variant_option_name in filter_param_names %}
+    {% if filter.param_name == variant_option_name %}
+      {% assign target_entry = nil %}
+      {% for entry in shop.metaobjects.variant_swatch_map.values %}
+        {% if entry.title == entry_title %}
+          {% assign target_entry = entry %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+  
+      {% if target_entry %}
+        {% assign variant_images_data = target_entry.variant_images_json %}
+        {% assign variant_images = variant_images_data.value %}
+      {% else %}
+        {% assign variant_images_data = nil %}
+      {% endif %}         
+    {% endif %}
+{% endfor %}
+
+
+
+                            
                             <li class="list-menu__item facets__item{% if forloop.index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
                               {%- if presentation == 'swatch' -%}
                                 <div class="{{ label_class }}">
