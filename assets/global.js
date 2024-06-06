@@ -1310,6 +1310,13 @@ if (regularPriceElement && salePriceElement) {
     }
 }
 
+        const stickyAddButtonUpdated = html.getElementById(`StickyProductSubmitButton-${sectionId}`);
+this.toggleStickyAddButton(
+    stickyAddButtonUpdated ? stickyAddButtonUpdated.hasAttribute('disabled') : true,
+    window.variantStrings.soldOut
+);
+
+
 
 
 
