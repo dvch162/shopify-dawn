@@ -1310,12 +1310,6 @@ if (regularPriceElement && salePriceElement) {
     }
 }
 
-const stickyAddButtonUpdated = html.getElementById(`StickyProductSubmitButton-${sectionId}`);
-this.toggleStickyAddButton(
-    stickyAddButtonUpdated ? stickyAddButtonUpdated.hasAttribute('disabled') : true,
-    window.variantStrings.soldOut
-);
-
 
 
 
@@ -1330,24 +1324,7 @@ this.toggleStickyAddButton(
       });
 
 
-    toggleStickyAddButton(disable = true, text, modifyClass = true) {
-    const stickyProductForm = document.querySelector('.sticky-atc');
     
-    if (!stickyProductForm) return;
-  
-    const stickyAddButton = stickyProductForm.querySelector('[name="add"]');
-    const stickyAddButtonText = stickyAddButton.querySelector('[name="add"] > span');
-  
-    if (!stickyAddButton) return;
-  
-    if (disable) {
-      stickyAddButton.setAttribute('disabled', 'disabled');
-      if (text) stickyAddButtonText.textContent = text;
-    } else {
-      stickyAddButton.removeAttribute('disabled');
-      stickyAddButtonText.textContent = window.variantStrings.addToCart;
-    }
-  }
   }
 
 
