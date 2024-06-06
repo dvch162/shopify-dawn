@@ -1330,15 +1330,7 @@ this.toggleStickyAddButton(
       });
 
 
-    
-  }
-
-
-
-
-
-
-  toggleStickyAddButton(disable = true, text, modifyClass = true) {
+    toggleStickyAddButton(disable = true, text, modifyClass = true) {
     const stickyProductForm = document.querySelector('.sticky-atc');
     
     if (!stickyProductForm) return;
@@ -1356,7 +1348,13 @@ this.toggleStickyAddButton(
       stickyAddButtonText.textContent = window.variantStrings.addToCart;
     }
   }
+  }
 
+
+
+
+
+  
 
   
 
