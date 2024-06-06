@@ -1109,12 +1109,27 @@ class VariantSelects extends HTMLElement {
     const mediaGallerySource = document.querySelector(`[id^="MediaGallery-${this.dataset.section}"] ul`);
     const mediaGalleryDestination = html.querySelector(`[id^="MediaGallery-${this.dataset.section}"] ul`);
 
+
+    
+    
+if (!mediaGallerySource || !mediaGalleryDestination) {
+        console.log('Media gallery source or destination not found');
+        return;
+    }
+    
     const refreshSourceData = () => {
       const mediaGallerySourceItems = Array.from(mediaGallerySource.querySelectorAll('li[data-media-id]'));
       const sourceSet = new Set(mediaGallerySourceItems.map((item) => item.dataset.mediaId));
       const sourceMap = new Map(mediaGallerySourceItems.map((item, index) => [item.dataset.mediaId, { item, index }]));
       return [mediaGallerySourceItems, sourceSet, sourceMap];
     };
+
+    
+
+
+
+    console.log('Before update, source items:', Array.from(mediaGallerySource.querySelectorAll('li[data-media-id]')));
+    console.log('Before update, destination items:', Array.from(mediaGalleryDestination.querySelectorAll('li[data-media-id]')));
 
     if (mediaGallerySource && mediaGalleryDestination) {
       let [mediaGallerySourceItems, sourceSet, sourceMap] = refreshSourceData();
@@ -1173,12 +1188,13 @@ class VariantSelects extends HTMLElement {
 
 
 
-
+   /*
     // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
     if (newMediaModal && newMediaModal.src && atcBoxImage) {
         atcBoxImage.src = newMediaModal.src;
     }
+*/
 
 
     
