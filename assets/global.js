@@ -1168,6 +1168,19 @@ class VariantSelects extends HTMLElement {
     const newModalContent = html.querySelector(`product-modal`);
     if (modalContent && newModalContent) modalContent.innerHTML = newModalContent.innerHTML;
 
+
+
+
+
+
+    // Update the ATC box image
+    const atcBoxImage = document.querySelector('#selectedVariantImage');
+    if (newMediaModal && newMediaModal.src && atcBoxImage) {
+        atcBoxImage.src = newMediaModal.src;
+    }
+
+
+    
   }
 
   
