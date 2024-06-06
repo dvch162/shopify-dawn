@@ -781,6 +781,7 @@ class SlideshowComponent extends SliderComponent {
       this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked ? this.pause() : this.play();
     }
   }
+  
 
   onButtonClick(event) {
     super.onButtonClick(event);
