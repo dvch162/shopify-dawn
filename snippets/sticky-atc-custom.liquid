@@ -44,7 +44,7 @@
                     {% if product.selected_or_first_available_variant.image %}
                       <img src="{{ product.selected_or_first_available_variant.image.src | img_url}}" alt="Selected Variant Image" id="selectedVariantImage"  width="100"  height="100"
 										{% elsif has_variants == false and product.images.size > 0 %}
-                      <img src="{{ product.images.first.src | img_url }}" alt="Product Image" id="selectedVariantImage" width="100"  height="100">
+                      <img src="{{ product.images.first.src | img_url }}" alt="Product Image" id="selectedVariantImage">
                     {% endif %}
                   </div>
                   <div class="selected-variant-title desktop-title">{{ product.title }}</div> 
