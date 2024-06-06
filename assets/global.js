@@ -1310,18 +1310,7 @@ this.toggleStickyAddButton(
 
 
 
-        
-        publish(PUB_SUB_EVENTS.variantChange, {
-          data: {
-            sectionId,
-            html,
-            variant: this.currentVariant,
-          },
-        });
-      });
-  }
-
-  toggleStickyAddButton(disable = true, text, modifyClass = true) {
+        toggleStickyAddButton(disable = true, text, modifyClass = true) {
     const stickyProductForm = document.querySelector('.sticky-atc');
     
     if (!stickyProductForm) return;
@@ -1339,6 +1328,19 @@ this.toggleStickyAddButton(
       stickyAddButtonText.textContent = window.variantStrings.addToCart;
     }
   }
+
+
+        
+        publish(PUB_SUB_EVENTS.variantChange, {
+          data: {
+            sectionId,
+            html,
+            variant: this.currentVariant,
+          },
+        });
+      });
+  }
+
 
 
   toggleAddButton(disable = true, text, modifyClass = true) {
