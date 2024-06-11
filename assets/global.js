@@ -1191,8 +1191,8 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
    
     // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
-    if (newMediaModalContent && newMediaGallery.src && atcBoxImage) {
-        atcBoxImage.src = newMediaModal.src;
+    if (newMediaModalContent && newMediaModalContent.src && atcBoxImage) {
+        atcBoxImage.src = newMediaModalContent.src;
     }
 
 
