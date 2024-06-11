@@ -1191,10 +1191,10 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
    
     // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
-    if (newMediaModalContent && newMediaModalContent.src && atcBoxImage) {
-        atcBoxImage.src = newMediaModalContent.src;
+    if (newModalContent && newModalContent.src && atcBoxImage) {
+        atcBoxImage.src = newModalContent.src;
     }
-
+*
 
 
     
