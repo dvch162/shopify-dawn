@@ -1188,13 +1188,13 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
 
 
-   /*
+   
     // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
     if (newMediaModal && newMediaModal.src && atcBoxImage) {
         atcBoxImage.src = newMediaModal.src;
     }
-*/
+
 
 
     
