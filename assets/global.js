@@ -1189,10 +1189,15 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
 
    
-    // Update the ATC box image
+     // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
+    console.log('atcBoxImage:', atcBoxImage);
+
     if (newModalContent && newModalContent.src && atcBoxImage) {
         atcBoxImage.src = newModalContent.src;
+        console.log('Updated ATC box image src to:', newModalContent.src);
+    } else {
+        console.error('Failed to update ATC box image: newModalContent or atcBoxImage not found, or newModalContent.src is undefined');
     }
 
 
