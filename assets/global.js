@@ -1189,9 +1189,25 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
 
    
-     // Update the ATC box image
+      // Update the ATC box image
     const atcBoxImage = document.querySelector('#selectedVariantImage');
     console.log('atcBoxImage:', atcBoxImage);
+
+    if (!newModalContent) {
+        console.error('newModalContent is not found');
+    } else {
+        console.log('newModalContent found:', newModalContent);
+    }
+
+    if (newModalContent && newModalContent.src) {
+        console.log('newModalContent.src:', newModalContent.src);
+    } else {
+        console.error('newModalContent.src is undefined');
+    }
+
+    if (!atcBoxImage) {
+        console.error('atcBoxImage is not found');
+    }
 
     if (newModalContent && newModalContent.src && atcBoxImage) {
         atcBoxImage.src = newModalContent.src;
@@ -1199,6 +1215,7 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
     } else {
         console.error('Failed to update ATC box image: newModalContent or atcBoxImage not found, or newModalContent.src is undefined');
     }
+
 
 
 
