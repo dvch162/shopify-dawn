@@ -1194,7 +1194,7 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
     if (newModalContent && newModalContent.src && atcBoxImage) {
         atcBoxImage.src = newModalContent.src;
     }
-*
+
 
 
     
