@@ -1199,7 +1199,7 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
         console.log('newModalContent found:', newModalContent);
     }
 
-    if (newModalContent && newModalContent.src) {
+    if (modalContent && newModalContent.src) {
         console.log('newModalContent.src:', newModalContent.src);
     } else {
         console.error('newModalContent.src is undefined');
@@ -1209,7 +1209,7 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
         console.error('atcBoxImage is not found');
     }
 
-    if (newModalContent && newModalContent.src && atcBoxImage) {
+    if (modalContent && newModalContent.src && atcBoxImage) {
         atcBoxImage.src = newModalContent.src;
         console.log('Updated ATC box image src to:', newModalContent.src);
     } else {
