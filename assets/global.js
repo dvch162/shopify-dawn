@@ -1190,31 +1190,15 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
    
       // Update the ATC box image
-    const atcBoxImage = document.querySelector('#selectedVariantImage');
-    console.log('atcBoxImage:', atcBoxImage);
+  const atcBoxImage = document.querySelector('#selectedVariantImage');
+  const newMediaModal = html.querySelector('.product__media-item [data-media-id] img'); // Adjust the selector as needed
 
-    if (!newModalContent) {
-        console.error('newModalContent is not found');
-    } else {
-        console.log('newModalContent found:', newModalContent);
-    }
+  if (newMediaModal && newMediaModal.src && atcBoxImage) {
+    atcBoxImage.src = newMediaModal.src;
+  }
 
-    if (modalContent && newModalContent.src) {
-        console.log('newModalContent.src:', newModalContent.src);
-    } else {
-        console.error('newModalContent.src is undefined');
-    }
 
-    if (!atcBoxImage) {
-        console.error('atcBoxImage is not found');
-    }
-
-    if (modalContent && newModalContent.src && atcBoxImage) {
-        atcBoxImage.src = newModalContent.src;
-        console.log('Updated ATC box image src to:', newModalContent.src);
-    } else {
-        console.error('Failed to update ATC box image: newModalContent or atcBoxImage not found, or newModalContent.src is undefined');
-    }
+    
 
 
 
