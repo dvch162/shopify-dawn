@@ -1189,9 +1189,9 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
 
    
-      // Extract the new variant image URL
+    // Extract the new variant image URL
   let newVariantImageUrl = '';
-  if (this.currentVariant.featured_media) {
+  if (this.currentVariant && this.currentVariant.featured_media && this.currentVariant.featured_media.preview_image) {
     newVariantImageUrl = this.currentVariant.featured_media.preview_image.src;
   } else {
     const newMediaModal = html.querySelector('.product__media-item [data-media-id] img'); // Adjust the selector as needed
@@ -1204,6 +1204,8 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
   const atcBoxImage = document.querySelector('#selectedVariantImage');
   if (newVariantImageUrl && atcBoxImage) {
     atcBoxImage.src = newVariantImageUrl;
+  } else {
+    console.warn('Could not update ATC box image: newVariantImageUrl or atcBoxImage not found.');
   }
 
 
