@@ -1189,12 +1189,21 @@ if (!mediaGallerySource || !mediaGalleryDestination) {
 
 
    
-      // Update the ATC box image
-  const atcBoxImage = document.querySelector('#selectedVariantImage');
-  const newMediaModal = html.querySelector('.product__media-item [data-media-id] img'); // Adjust the selector as needed
+      // Extract the new variant image URL
+  let newVariantImageUrl = '';
+  if (this.currentVariant.featured_media) {
+    newVariantImageUrl = this.currentVariant.featured_media.preview_image.src;
+  } else {
+    const newMediaModal = html.querySelector('.product__media-item [data-media-id] img'); // Adjust the selector as needed
+    if (newMediaModal && newMediaModal.src) {
+      newVariantImageUrl = newMediaModal.src;
+    }
+  }
 
-  if (newMediaModal && newMediaModal.src && atcBoxImage) {
-    atcBoxImage.src = newMediaModal.src;
+  // Update the ATC box image
+  const atcBoxImage = document.querySelector('#selectedVariantImage');
+  if (newVariantImageUrl && atcBoxImage) {
+    atcBoxImage.src = newVariantImageUrl;
   }
 
 
