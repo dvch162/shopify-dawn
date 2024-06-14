@@ -133,3 +133,34 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+
+
+<style>
+
+  .mega-menu__image {
+    max-width: 100%; /* Full width of the column */
+    height: auto;
+    border-radius: 10px; /* Adjust the radius value as needed (ex: 10px for rounded corners, 50% makes the image a circle) */
+    /* Additional styles if needed */
+  }
+
+  .mega-menu__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    /* Additional styles if needed */
+  }
+
+.mega-menu__list.megamenu-with-image {
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(calc((100% - (5 * 4rem)) / 6), calc((100% - (5 * 4rem)) / 6)));
+}
+
+.mega-menu__link.hide-title {
+  display: none; 
+}
+
+</style>
