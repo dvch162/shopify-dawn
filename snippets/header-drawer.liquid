@@ -303,3 +303,52 @@
     </div>
   </details>
 </header-drawer>
+
+
+<style>
+
+{% if section.settings.drawer_menu_images_toggle and section.settings.drawer_menu_images_border_toggle %}
+  
+.menu-drawer__menu {
+  list-style: none;
+  padding-left: 0; /* Remove default padding */
+}
+
+.menu-drawer__menu li .menu-drawer__menu-item-container {
+  border-top: 1px solid {{ section.settings.drawer_menu_images_border_color }};
+}
+
+.menu-drawer__menu li:last-child .menu-drawer__menu-item-container {
+  border-bottom: 1px solid {{ section.settings.drawer_menu_images_border_color }};
+}  
+{% endif %}
+  
+
+.menu-drawer__menu-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This will push the image to the far right */
+  padding: 1.1rem 3rem;
+  /*border-bottom: 1px solid #eaeaea;  Add a border to the bottom of each list item */
+}
+  
+.menu-drawer__menu-item-link {
+  margin-left: auto; /* This ensures that the link (image) is pushed to the far right */
+}
+
+.menu-drawer__image {
+  max-width: 50px; /* Set a fixed width for the images */
+  height: 50px; /* Set a fixed height for the images to make them square */
+  object-fit: cover; /* Ensures the image covers the area, useful if the images are not square */
+  border-radius: 5px; /* Adjust the radius value as needed */
+}
+
+.menu-drawer__menu-item.menu-drawer__menu-item-w-image {
+  padding: 0px 0px;
+}
+
+</style>
+
+
+
+
