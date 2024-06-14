@@ -28,47 +28,6 @@
         "padding_bottom": 36
       }
     },
-    "collection_list_ihfJx7": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_FcPpcX": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "t-shirts"
-          }
-        },
-        "featured_collection_caUpj4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_DgTwMW": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "hoodies"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_FcPpcX",
-        "featured_collection_caUpj4",
-        "featured_collection_DgTwMW"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "main_list_collection_custom_BRcDtU": {
       "type": "main-list-collection-custom",
       "blocks": {
@@ -125,7 +84,6 @@
   "order": [
     "banner",
     "product-grid",
-    "collection_list_ihfJx7",
     "main_list_collection_custom_BRcDtU"
   ]
 }
