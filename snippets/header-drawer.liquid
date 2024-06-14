@@ -21,8 +21,52 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              
+              
               {%- for link in section.settings.menu.links -%}
                 <li>
+
+
+{% if section.settings.drawer_menu_images_toggle != 'none' %}
+  {% assign image_url = '' %}
+
+  {% if section.settings.drawer_menu_images_toggle == 'featured' %}
+    {% if link.object.featured_image %}
+      {% assign image_url = link.object.featured_image | img_url: 'master' %}
+    {% endif %}
+  {% elsif section.settings.drawer_menu_images_toggle == 'metafield' %}
+    {% if link.object.metafields.custom.header_menu_image %}
+      {% assign image_url = link.object.metafields.custom.header_menu_image | img_url: 'master' %}
+    {% endif %}
+  {% endif %}
+
+  <div class="menu-drawer__menu-item-container{% if link.current %} menu-drawer__menu-item--active{% endif %}">
+    <a
+      id="HeaderDrawer-{{ link.handle }}"
+      href="{{ link.url }}"
+      class="menu-drawer__menu-item menu-drawer__menu-item-w-image link link--text focus-inset"
+      {% if link.current %}
+        aria-current="page"
+      {% endif %}
+    >
+      {{ link.title | escape }}
+    </a>
+
+    {% if image_url != blank %}
+      <a href="{{ link.url }}" class="menu-drawer__menu-item-link">
+        <img src="{{ image_url }}" alt="{{ link.title | escape }}" class="menu-drawer__image">
+      </a>
+    {% endif %}
+  </div>
+
+{%- else -%}
+
+
+
+
+
+
+                  
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
@@ -119,6 +163,11 @@
                       {{ link.title | escape }}
                     </a>
                   {%- endif -%}
+
+
+{% endif %}
+
+                  
                 </li>
               {%- endfor -%}
             </ul>
