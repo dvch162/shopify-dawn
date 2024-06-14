@@ -35,7 +35,7 @@
         "mega_menu_images_toggle": "metafield",
         "mega_menu_images_title": false,
         "drawer_menu_images_toggle": "metafield",
-        "drawer_menu_images_border_toggle": false,
+        "drawer_menu_images_border_toggle": true,
         "drawer_menu_images_border_color": "#eaeaea",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
