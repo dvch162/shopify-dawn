@@ -32,7 +32,7 @@
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "mega",
-        "mega_menu_images_toggle": "featured",
+        "mega_menu_images_toggle": "metafield",
         "mega_menu_images_title": false,
         "drawer_menu_images_toggle": "featured",
         "drawer_menu_images_border_toggle": false,
