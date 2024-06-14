@@ -55,6 +55,7 @@
         "featured_collection_caUpj4",
         "featured_collection_DgTwMW"
       ],
+      "disabled": true,
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
@@ -110,7 +111,7 @@
         "featured_collection_cyLXNX"
       ],
       "settings": {
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "columns_desktop": 5,
         "color_scheme": "",
         "show_view_all": false,
