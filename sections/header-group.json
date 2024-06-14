@@ -32,6 +32,8 @@
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "mega",
+        "mega_menu_images_toggle": "featured",
+        "mega_menu_images_title": false,
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
