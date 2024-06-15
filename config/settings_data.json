@@ -117,6 +117,8 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "cart_progress_threshold": "99",
+    "cart_progress_bar_color": "#00d51b",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
