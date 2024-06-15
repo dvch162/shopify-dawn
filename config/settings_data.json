@@ -118,8 +118,8 @@
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
     "cart_progress_threshold": "99",
-    "cart_progress_bar_color": "#00d51b",
-    "cart_progress_bar_full_color": "#334fb4",
+    "cart_progress_bar_color": "#334fb4",
+    "cart_progress_bar_full_color": "#00d52e",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
