@@ -64,7 +64,7 @@
           "type": "inventory",
           "settings": {
             "text_style": "body",
-            "inventory_threshold": 10,
+            "inventory_threshold": 0,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
             "in_stock_icon": "shopify:\/\/shop_images\/green.gif",
