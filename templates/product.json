@@ -67,9 +67,10 @@
             "inventory_threshold": 0,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
+            "in_stock_icon": "shopify:\/\/shop_images\/greem-circle.png",
             "hide_low_stock": false,
             "hide_out_of_stock": false,
-            "show_back_in_stock_date": true,
+            "show_back_in_stock_date": false,
             "back_in_stock_text": "Expected back in stock on [back_in_stock_date].",
             "back_in_stock_date_format": "%Y-%m-%d"
           }
