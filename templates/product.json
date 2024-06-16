@@ -40,7 +40,7 @@
         "inventory_E47fdU": {
           "type": "inventory",
           "settings": {
-            "text_style": "uppercase",
+            "text_style": "body",
             "inventory_threshold": 33,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
