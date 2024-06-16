@@ -44,7 +44,7 @@
             "inventory_threshold": 50,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
-            "in_stock_icon": "shopify:\/\/shop_images\/green.gif",
+            "in_stock_icon": "shopify:\/\/shop_images\/greem-circle.png",
             "hide_low_stock": false,
             "hide_out_of_stock": false,
             "show_back_in_stock_date": false,
