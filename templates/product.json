@@ -40,10 +40,11 @@
         "inventory_E47fdU": {
           "type": "inventory",
           "settings": {
-            "text_style": "body",
+            "text_style": "subtitle",
             "inventory_threshold": 50,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
+            "in_stock_icon": "shopify:\/\/shop_images\/green.gif",
             "hide_low_stock": false,
             "hide_out_of_stock": false,
             "show_back_in_stock_date": false,
