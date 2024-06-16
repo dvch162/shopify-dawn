@@ -40,7 +40,7 @@
         "inventory_fa8Lp6": {
           "type": "inventory",
           "settings": {
-            "text_style": "subtitle",
+            "text_style": "body",
             "inventory_threshold": 0,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
