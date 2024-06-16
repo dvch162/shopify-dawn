@@ -895,96 +895,11 @@
           "id": "show_inventory_quantity",
           "label": "t:sections.main-product.blocks.inventory.settings.show_inventory_quantity.label",
           "default": true
-        }, 
+        }
+      ]
 
+  },
 
-
-
-
-{
-  "type": "checkbox",
-  "id": "hide_in_stock",
-  "label": "Hide In Stock Status",
-  "default": false
-},
-{
-  "type": "image_picker",
-  "id": "in_stock_icon",
-  "label": "In Stock Icon"
-},
-{
-  "type": "checkbox",
-  "id": "hide_low_stock",
-  "label": "Hide Low Stock Status",
-  "default": false
-},
-{
-  "type": "image_picker",
-  "id": "low_stock_icon",
-  "label": "Low Stock Icon"
-},
-{
-  "type": "checkbox",
-  "id": "hide_out_of_stock",
-  "label": "Hide Out Of Stock Status",
-  "default": false
-},
-{
-  "type": "image_picker",
-  "id": "out_of_stock_icon",
-  "label": "Out Of Stock Icon"
-},
-{
-  "type": "checkbox",
-  "id": "show_back_in_stock_date",
-  "label": "Show Back In Stock Date",
-  "default": false
-},
-{
-  "type": "text",
-  "id": "back_in_stock_text",
-  "label": "Back in Stock Text",
-  "default": "Expected back in stock on [back_in_stock_date].",
-  "info": "Use [back_in_stock_date] where you want the date to appear."
-},
-{
-  "type": "select",
-  "id": "back_in_stock_date_format",
-  "label": "Back In Stock Date Format",
-  "options": [
-    {
-      "value": "%Y-%m-%d",
-      "label": "2025-03-14"
-    },
-    {
-      "value": "%d/%m/%Y",
-      "label": "14/03/2025"
-    },
-    {
-      "value": "%m/%d/%Y",
-      "label": "03/14/2025"
-    },
-    {
-      "value": "%B %d, %Y",
-      "label": "March 14, 2025"
-    },
-    {
-      "value": "%d-%m-%Y",
-      "label": "14-03-2025"
-    },
-    {
-      "value": "%Y-%m",
-      "label": "2025-03"
-    },
-    {
-      "value": "%d/%m/%y",
-      "label": "14/03/25"
-    }
-  ],
-  "default": "%Y-%m-%d"
-}
-
-        
 
 
         
@@ -992,9 +907,7 @@
 
       
 
-        
-      ]
-    },
+ 
     {
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
