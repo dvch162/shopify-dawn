@@ -41,7 +41,7 @@
           "type": "inventory",
           "settings": {
             "text_style": "body",
-            "inventory_threshold": 10,
+            "inventory_threshold": 50,
             "show_inventory_quantity": true,
             "hide_in_stock": false,
             "hide_low_stock": false,
