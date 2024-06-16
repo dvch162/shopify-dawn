@@ -37,6 +37,21 @@
             "option_value_metafield_key": "product_grouping_option_1_value"
           }
         },
+        "inventory_yea7M7": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 7,
+            "show_inventory_quantity": true,
+            "hide_in_stock": false,
+            "in_stock_icon": "shopify:\/\/shop_images\/green.gif",
+            "hide_low_stock": false,
+            "hide_out_of_stock": false,
+            "show_back_in_stock_date": false,
+            "back_in_stock_text": "Expected back in stock on [back_in_stock_date].",
+            "back_in_stock_date_format": "%Y-%m-%d"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -59,21 +74,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "inventory_yea7M7": {
-          "type": "inventory",
-          "settings": {
-            "text_style": "body",
-            "inventory_threshold": 7,
-            "show_inventory_quantity": true,
-            "hide_in_stock": false,
-            "in_stock_icon": "shopify:\/\/shop_images\/green.gif",
-            "hide_low_stock": false,
-            "hide_out_of_stock": false,
-            "show_back_in_stock_date": false,
-            "back_in_stock_text": "Expected back in stock on [back_in_stock_date].",
-            "back_in_stock_date_format": "%Y-%m-%d"
-          }
         }
       },
       "block_order": [
@@ -82,11 +82,11 @@
         "price",
         "variant_picker",
         "product_grouping_picker_UNGff9",
+        "inventory_yea7M7",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "inventory_yea7M7"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
