@@ -87,10 +87,10 @@
         "metaobject_entry_name": "iconsgrouping2",
         "layout": "horizontal",
         "icons_per_line": 5,
-        "icons_horiz_padding_left": 0,
-        "icons_horiz_padding_right": 0,
+        "icons_horiz_padding_left": 9,
+        "icons_horiz_padding_right": 9,
         "num_columns": 2,
-        "icon_size": 7,
+        "icon_size": 10.5,
         "heading_size": "h4"
       }
     }
