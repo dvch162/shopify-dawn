@@ -1508,6 +1508,16 @@
         "id": "cart_progress_bar_text_color",
         "label": "Progress Bar Text Color",
         "default": "#333"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.footer.settings.header__7.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "payment_enable",
+        "default": true,
+        "label": "t:sections.footer.settings.payment_enable.label"
       }
     ]
   }
