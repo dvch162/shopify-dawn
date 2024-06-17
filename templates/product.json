@@ -85,7 +85,7 @@
             "icons_horiz_padding_left": 0,
             "icons_horiz_padding_right": 0,
             "num_columns": 1,
-            "icon_size": 10,
+            "icon_size": 8,
             "heading_size": "h3"
           }
         }
