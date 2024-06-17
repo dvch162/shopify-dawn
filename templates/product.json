@@ -74,6 +74,20 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "icon_with_text_custom_fi44MQ": {
+          "type": "icon-with-text-custom",
+          "settings": {
+            "icon_source": "product_metafield",
+            "metaobject_entry_name": "",
+            "layout": "horizontal",
+            "icons_per_line": 3,
+            "icons_horiz_padding_left": 0,
+            "icons_horiz_padding_right": 0,
+            "num_columns": 1,
+            "icon_size": 10,
+            "heading_size": "h3"
+          }
         }
       },
       "block_order": [
@@ -86,7 +100,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "icon_with_text_custom_fi44MQ"
       ],
       "settings": {
         "enable_sticky_info": true,
