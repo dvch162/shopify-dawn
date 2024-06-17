@@ -5,7 +5,7 @@
     "icon_with_text_custom_dUHmAe": {
       "type": "icon-with-text-custom",
       "settings": {
-        "icon_source": "product_metafield",
+        "icon_source": "metaobject_entry",
         "metaobject_entry_name": "groupingname2",
         "layout": "horizontal",
         "icons_per_line": 5,
