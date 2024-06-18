@@ -115,7 +115,7 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "cart_drawer_collection": "",
+    "cart_drawer_collection": "clothing",
     "cart_color_scheme": "scheme-1",
     "cart_progress_threshold": "2000",
     "cart_progress_bar_color": "#334fb4",
