@@ -11,6 +11,13 @@
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
+
+{% if settings.enable_cart_upsell %}
+  <script src="{{ 'cart-checkbox-upsell.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+
+
 <style>
   .drawer {
     visibility: hidden;
@@ -491,6 +498,14 @@
         <!-- Subtotals -->
 
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
+
+
+          {% if settings.enable_cart_upsell %}
+  {% render 'cart-checkbox-upsell' %}
+{% endif %}
+
+
+          
           <div>
             {%- if cart.cart_level_discount_applications.size > 0 -%}
               <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
