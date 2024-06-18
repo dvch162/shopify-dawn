@@ -191,6 +191,18 @@ class CartItems extends HTMLElement {
       .finally(() => {
         this.disableLoading(line);
       });
+
+
+
+
+
+    const cartUpdatedEvent = new CustomEvent('cartUpdated', {
+  detail: {
+    message: 'Cart was updated',
+  }
+});
+document.dispatchEvent(cartUpdatedEvent);
+
   }
 
 
