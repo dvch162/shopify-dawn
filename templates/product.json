@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -64,6 +73,11 @@
             "show_gift_card_recipient": true
           }
         },
+        "upsell_box_cdzkpd": {
+          "type": "upsell-box",
+          "settings": {
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -99,6 +113,7 @@
         "inventory_yea7M7",
         "quantity_selector",
         "buy_buttons",
+        "upsell_box_cdzkpd",
         "description",
         "share",
         "icon_with_text_custom_fi44MQ"
