@@ -1518,6 +1518,72 @@
         "id": "payment_enable",
         "default": true,
         "label": "t:sections.footer.settings.payment_enable.label"
+      },
+      {
+        "type": "header",
+        "content": "Cart Upsell"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_upsell",
+        "label": "Enable Cart Upsell Checkbox",
+        "default": false
+      },
+      {
+        "type": "product",
+        "id": "cart_upsell_product",
+        "label": "Cart Upsell Product",
+        "info": "Note: Defaults to first variant of the selected product"
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_text",
+        "label": "Cart Upsell Text",
+        "default": "Add Gift Wrap"
+      },
+      {
+        "type": "range",
+        "id": "cart_upsell_font_size",
+        "label": "Font Size",
+        "min": 10,
+        "max": 20,
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "cart_upsell_font_weight",
+        "label": "Font Weight",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "600",
+            "label": "Semi-Bold"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ],
+        "default": "normal"
+      },
+      {
+        "type": "select",
+        "id": "cart_upsell_alignment",
+        "label": "Cart Upsell Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right"
       }
     ]
   }
