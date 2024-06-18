@@ -117,11 +117,13 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "cart_progress_threshold": "99",
+    "cart_progress_threshold": "2000",
     "cart_progress_bar_color": "#334fb4",
     "cart_progress_bar_full_color": "#00d52e",
     "enable_cart_upsell": true,
+    "cart_upsell_product": "gift-wrap",
     "cart_upsell_text": "Add Gift Wrap for 300 UAH",
+    "cart_upsell_font_size": 14,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -145,7 +147,7 @@
           "font_size": 14,
           "color_scheme": "",
           "enable_divider": false,
-          "divider_color": "#ccc",
+          "divider_color": "#cccccc",
           "padding_top": 12,
           "padding_bottom": 12
         }
