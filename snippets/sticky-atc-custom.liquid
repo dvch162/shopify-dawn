@@ -232,8 +232,10 @@
       
     .content-container {
         display: flex;
-        flex-direction: column; /* To stack its children vertically */
-        flex: 2; /* Allow it to take up the remaining space */
+            flex-direction: row;
+
+        /* flex-direction: column; /* To stack its children vertically */
+        flex: 1; /* Allow it to take up the remaining space */
         align-items: stretch; /* Make children take full width */
     }
     
@@ -241,15 +243,18 @@
       
     .product-details-container {
         display: flex;
+      flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex: 2; /* Allow it to take up the remaining space */
+        flex: 1; /* Allow it to take up the remaining space */
     }
     
     
     /* Use flexbox for the product form */
     .product-form.sticky-atc {
         display: flex;
+            flex-direction: row;
+
         justify-content: space-between; /* Spread children horizontally */
         align-items: center; /* Center children vertically */
     }
@@ -266,10 +271,13 @@
     .selected-variant-image-container {
         flex-shrink: 0; /* Prevent shrinking */
         height: 100px; /* Adjust as per your requirement */
+      width: auto;
         overflow: hidden; 
         margin-left: 0px; /* Add some space between product info and image */
         margin-right: 10px; /* Space between image and right edge of screen */
         display: flex; /* Used to center the image both vertically and horizontally */
+            flex-direction: row;
+
         align-items: center; /* Vertically center the image */
         justify-content: center; /* Horizontally center the image */
     }
