@@ -1,21 +1,24 @@
-
-
-
-
-
 <!-- snippets/upsell-product.liquid -->
 
 <div class="upsell-box">
   <div class="upsell-top-section">
     <div class="upsell-image-placeholder"></div>
     <div class="upsell-title">
-      <h2>Add laces to the shoes and save</h2>
+      <h2 style="
+        font-size: {{ section.settings.title_font_size }};
+        color: {{ section.settings.title_font_color }};
+        font-style: {% if section.settings.title_font_style == 'italic' %}italic{% else %}normal{% endif %};
+        font-weight: {% if section.settings.title_font_style == 'bold' %}bold{% else %}normal{% endif %};
+      ">
+        {{ section.settings.title_text }}
+      </h2>
     </div>
   </div>
   <div class="upsell-middle-section">
-    <ul>
-      <li>Feature description 1</li>
-      <li>Feature description 2</li>
+    <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
+      {% for feature in section.settings.bullet_features_text | split: '\n' %}
+        <li>{{ feature }}</li>
+      {% endfor %}
     </ul>
   </div>
   <div class="upsell-bottom-section">
@@ -75,6 +78,12 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            style="
+              background-color: {{ section.settings.button_color }};
+              color: {{ section.settings.button_font_color }};
+              font-style: {% if section.settings.button_font_style == 'italic' %}italic{% else %}normal{% endif %};
+              font-weight: {% if section.settings.button_font_style == 'bold' %}bold{% else %}normal{% endif %};
+            "
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
@@ -83,7 +92,7 @@
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {{ section.settings.button_text }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -117,8 +126,6 @@
   }
   .upsell-title h2 {
     margin: 0;
-    font-size: 18px;
-    font-weight: bold;
   }
   .upsell-middle-section ul {
     padding-left: 20px;
@@ -129,16 +136,5 @@
   .upsell-bottom-section {
     text-align: center;
     margin-top: 20px;
-  }
-  .upsell-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .upsell-button:hover {
-    background-color: #0056b3;
   }
 </style>
