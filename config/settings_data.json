@@ -120,6 +120,7 @@
     "cart_progress_threshold": "99",
     "cart_progress_bar_color": "#334fb4",
     "cart_progress_bar_full_color": "#00d52e",
+    "enable_cart_upsell": true,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
