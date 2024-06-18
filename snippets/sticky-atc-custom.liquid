@@ -232,7 +232,7 @@
       
     .content-container {
         display: flex;
-        flex-direction: column; /* To stack its children vertically */
+        flex-direction: row; /* To stack its children vertically */
         flex: 1; /* Allow it to take up the remaining space */
         align-items: stretch; /* Make children take full width */
     }
@@ -265,7 +265,7 @@
     /* The image container will only take up as much space as it needs */
     .selected-variant-image-container {
         flex-shrink: 0; /* Prevent shrinking */
-        height: 100px; Adjust as per your requirement
+        height: 100px; /* Adjust as per your requirement */
         overflow: hidden; 
         margin-left: 0px; /* Add some space between product info and image */
         margin-right: 10px; /* Space between image and right edge of screen */
@@ -275,7 +275,8 @@
     }
       
     #selectedVariantImage {
-        max-height: 100%; /* Ensures image doesn't exceed container height 
+      height: auto;  
+      max-height: 100%; /* Ensures image doesn't exceed container height 
         width: auto;       Auto width to maintain aspect ratio */
     }
     
