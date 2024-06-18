@@ -1,0 +1,58 @@
+{% assign upsell_product = all_products[settings.cart_upsell_product] %}
+{% if upsell_product %}
+  {% assign variant_id = upsell_product.variants.first.id %}
+  <div class="cart-upsell" style="text-align: {{ settings.cart_upsell_alignment }}; font-size: {{ settings.cart_upsell_font_size }}px; font-weight: {{ settings.cart_upsell_font_weight }};">
+    <label for="cart-upsell-checkbox" class="custom-checkbox">
+      <input type="checkbox" id="cart-upsell-checkbox" class="custom-checkbox__input" name="cart-upsell" value="1" data-variant-id="{{ variant_id }}">
+      <span class="custom-checkbox__icon"></span>
+      {{ settings.cart_upsell_text }} 
+    </label>
+  </div>
+{% endif %}
+
+<style>
+
+#main-cart-footer.is-empty .cart-upsell {
+  display: none;
+}
+
+#cart-upsell-checkbox {
+  display: none;
+}
+
+.custom-checkbox {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.custom-checkbox__icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid currentColor;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.custom-checkbox__input:checked + .custom-checkbox__icon {
+  background-color: rgb(var(--color-background));
+}
+
+.custom-checkbox__icon::before {
+  content: '';
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid currentColor; 
+  border-bottom: 2px solid currentColor;
+  transform: translate(0, -1px) rotate(-45deg);
+  opacity: 0; /* Hidden when unchecked */
+}
+
+.custom-checkbox__input:checked + .custom-checkbox__icon::before {
+  opacity: 1; /* Show checkmark when checked */
+}
+
+</style>
