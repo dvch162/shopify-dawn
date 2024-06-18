@@ -80,6 +80,13 @@
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+
+
+{% section 'upsell-product' %}
+
+
+
+          
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -533,7 +540,6 @@
 
 
 
-{% section 'upsell-product' %}
 
 
 
