@@ -112,7 +112,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "drawer",
+    "cart_type": "page",
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
@@ -131,6 +131,21 @@
         "type": "main-password-footer",
         "settings": {
           "color_scheme": "scheme-1"
+        }
+      },
+      "breadcrumbs": {
+        "type": "breadcrumbs",
+        "settings": {
+          "breadcrumbs_enabled": true,
+          "breadcrumbs_menu_definition": "main-menu",
+          "prefer_shortest_path": false,
+          "separator_shape": "triangle",
+          "font_size": 14,
+          "color_scheme": "",
+          "enable_divider": false,
+          "divider_color": "#ccc",
+          "padding_top": 12,
+          "padding_bottom": 12
         }
       }
     },
