@@ -24,11 +24,14 @@
     </ul>
 
     
-    <!-- <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
+    {% comment %}
+    <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
       {% for feature in section.settings.bullet_features_text | split: '\n' %}
         <li>{{ feature }}</li>
       {% endfor %}
-    </ul> -->
+    </ul> 
+        {% endcomment %}
+
   </div>
   <div class="upsell-bottom-section">
     <product-form
