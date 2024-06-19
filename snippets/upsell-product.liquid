@@ -1,7 +1,9 @@
 <!-- snippets/upsell-product.liquid -->
 <div class="upsell-box">
   <div class="upsell-top-section">
-    <div class="upsell-image-placeholder"></div>
+    <div class="upsell-image-placeholder">
+      <img src="{{ 'image-placeholder.jpg' | image_url }}" alt="Laces image" class="upsell-image">
+    </div>
     <div class="upsell-title">
       <h2>Add laces to the shoes and save</h2>
     </div>
@@ -33,7 +35,6 @@
         <span class="product-form__error-message"></span>
       </div>
 
-arduino
 
   {%- form 'product',
     product,
