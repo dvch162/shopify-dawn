@@ -1,7 +1,13 @@
 <!-- snippets/upsell-product.liquid -->
+
 <div class="upsell-box" style="background-color: {{ block.settings.box_background_color }};">
   <div class="upsell-top">
-    <img src="{{ 'image-placeholder.jpg' | image_url }}" alt="Laces image" class="upsell-image">
+    {% if block.settings.placeholder_image != blank %}
+    <img src="{{ 'block.settings.placeholder_image' | image_url: '200x' }}" alt="Laces image" class="upsell-image">
+      {% else %}
+        <img src="{{ 'image-placeholder.jpg' | image_url: '200x' }}" alt="Laces image" class="upsell-image">
+
+    {% endif %}
     <div class="upsell-title" style="font-size: {{ block.settings.title_font_size }}px; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }};">
       {{ block.settings.title_text }}
     </div>
