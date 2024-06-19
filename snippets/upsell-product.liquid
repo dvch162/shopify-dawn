@@ -2,7 +2,7 @@
 <div class="upsell-box" style="background-color: {{ block.settings.box_background_color }}">
   <div class="upsell-top">
     <img src="{{ 'image-placeholder.jpg' | image_url }}" width="50" height="50" alt="Laces image" class="upsell-image">
-    <div id="title_text" class="upsell-title" style="font-size: {{ block.settings.title_font_size }}; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }}">
+    <div class="upsell-title" style="font-size: {{ block.settings.title_font_size }}; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }}">
       {{ block.settings.title_text }}
     </div>
   </div>
@@ -84,3 +84,44 @@
     </product-form>
   </div>
 </div>
+
+<style>
+  .upsell-box {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .upsell-top-section {
+    display: flex;
+    align-items: center;
+  }
+  .upsell-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  .upsell-title h2 {
+    margin: 0;
+  }
+  .upsell-middle-section ul {
+    padding-left: 20px;
+  }
+  .upsell-middle-section li {
+    margin-bottom: 10px;
+  }
+  .upsell-bottom-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .upsell-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .upsell-button:hover {
+    background-color: darken({{ block.settings.button_color }}, 10%);
+  }
+</style>
