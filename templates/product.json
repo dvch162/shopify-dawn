@@ -76,7 +76,7 @@
         "upsell_box_cdzkpd": {
           "type": "upsell-box",
           "settings": {
-            "box_background_color": "#e59696",
+            "box_background_color": "#e45c5c",
             "title_text": "Add laces to the shoes",
             "title_font_color": "#000000",
             "title_font_size": 18,
