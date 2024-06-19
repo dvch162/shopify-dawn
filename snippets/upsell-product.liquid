@@ -1,28 +1,16 @@
 <!-- snippets/upsell-product.liquid -->
-
 <div class="upsell-box">
   <div class="upsell-top-section">
     <div class="upsell-image-placeholder"></div>
     <div class="upsell-title">
-      <h2 style="
-        font-size: {{ section.settings.title_font_size }};
-        color: {{ section.settings.title_font_color }};
-        font-style: {% if section.settings.title_font_style == 'italic' %}italic{% else %}normal{% endif %};
-        font-weight: {% if section.settings.title_font_style == 'bold' %}bold{% else %}normal{% endif %};
-      ">
-        {{ section.settings.title_text }}
-      </h2>
+      <h2>Add laces to the shoes and save</h2>
     </div>
   </div>
   <div class="upsell-middle-section">
-
- <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
-  {% assign features = section.settings.bullet_features_text | split: '\n' %}
-  {% for feature in features %}
-    <li>{{ feature }}</li>
-  {% endfor %}
-</ul>
-
+    <ul>
+      <li>Feature description 1</li>
+      <li>Feature description 2</li>
+    </ul>
   </div>
   <div class="upsell-bottom-section">
     <product-form
@@ -45,70 +33,66 @@
         <span class="product-form__error-message"></span>
       </div>
 
-      {%- form 'product',
-        product,
-        id: product_form_id,
-        class: 'form',
-        novalidate: 'novalidate',
-        data-type: 'add-to-cart-form'
+arduino
+
+  {%- form 'product',
+    product,
+    id: product_form_id,
+    class: 'form',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form'
+  -%}
+    <input
+      type="hidden"
+      name="id"
+      value="48690637406486"
+      {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+        disabled
+      {% endif %}
+      class="product-variant-id"
+    >
+
+    {%- if gift_card_recipient_feature_active -%}
+      {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+    {%- endif -%}
+
+    <div class="product-form__buttons">
+      {%- liquid
+        assign check_against_inventory = true
+        if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+          assign check_against_inventory = false
+        endif
+        if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+          assign quantity_rule_soldout = true
+        endif
       -%}
-        <input
-          type="hidden"
-          name="id"
-          value="48690637406486"
-          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-            disabled
-          {% endif %}
-          class="product-variant-id"
-        >
-
-        {%- if gift_card_recipient_feature_active -%}
-          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
-        {%- endif -%}
-
-        <div class="product-form__buttons">
-          {%- liquid
-            assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
-              assign check_against_inventory = false
-            endif
-            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
-              assign quantity_rule_soldout = true
-            endif
-          -%}
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            style="
-              background-color: {{ section.settings.button_color }};
-              color: {{ section.settings.button_font_color }};
-              font-style: {% if section.settings.button_font_style == 'italic' %}italic{% else %}normal{% endif %};
-              font-weight: {% if section.settings.button_font_style == 'bold' %}bold{% else %}normal{% endif %};
-            "
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-              disabled
-            {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ section.settings.button_text }}
-              {%- endif -%}
-            </span>
-            {%- render 'loading-spinner' -%}
-          </button>
-          {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+      <button
+        id="ProductSubmitButton-{{ section_id }}"
+        type="submit"
+        name="add"
+        class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+        {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+          disabled
+        {% endif %}
+      >
+        <span>
+          {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- else -%}
+            {{ 'products.product.add_to_cart' | t }}
           {%- endif -%}
-        </div>
-      {%- endform -%}
-    </product-form>
+        </span>
+        {%- render 'loading-spinner' -%}
+      </button>
+      {%- if show_dynamic_checkout -%}
+        {{ form | payment_button }}
+      {%- endif -%}
+    </div>
+  {%- endform -%}
+</product-form>
+
   </div>
 </div>
-
 <style>
   .upsell-box {
     background-color: #f0f0f0;
@@ -129,6 +113,8 @@
   }
   .upsell-title h2 {
     margin: 0;
+    font-size: 18px;
+    font-weight: bold;
   }
   .upsell-middle-section ul {
     padding-left: 20px;
@@ -139,5 +125,16 @@
   .upsell-bottom-section {
     text-align: center;
     margin-top: 20px;
+  }
+  .upsell-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .upsell-button:hover {
+    background-color: #0056b3;
   }
 </style>
