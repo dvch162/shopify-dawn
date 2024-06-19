@@ -1,39 +1,29 @@
 <!-- snippets/upsell-product.liquid -->
-
-<div class="upsell-box">
-  <div class="upsell-top-section">
-    <div class="upsell-image-placeholder"></div>
-    <div class="upsell-title">
-      <h2 style="
-        font-size: {{ section.settings.title_font_size }};
-        color: {{ section.settings.title_font_color }};
-        font-style: {% if section.settings.title_font_style == 'italic' %}italic{% else %}normal{% endif %};
-        font-weight: {% if section.settings.title_font_style == 'bold' %}bold{% else %}normal{% endif %};
-      ">
-        {{ section.settings.title_text }}
-      </h2>
+<div class="upsell-box" style="background-color: {{ block.settings.box_background_color }}">
+  <div class="upsell-top">
+    <img src="{{ 'image-placeholder.jpg' | image_url }}" alt="Laces image" class="upsell-image">
+    <div class="upsell-title" style="font-size: {{ block.settings.title_font_size }}; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }}">
+      {{ block.settings.title_text }}
     </div>
   </div>
-  <div class="upsell-middle-section">
-    <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
-      {% for feature in section.settings.bullet_features_text | split: ',' %}
-        <li>{{ feature }}</li>
+
+  <div class="upsell-middle">
+    <ul class="upsell-features" style="font-size: {{ block.settings.bullet_font_size }}">
+      {% assign features = block.settings.bullet_features_text | split: ',' %}
+      {% for feature in features %}
+        <li>{{ feature | strip }}</li>
       {% endfor %}
     </ul>
   </div>
-  <div class="upsell-bottom-section">
+
+  <div class="upsell-bottom">
     <product-form
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          class="icon icon-error"
-          viewBox="0 0 13 13"
-        >
+        <svg aria-hidden="true" focusable="false" class="icon icon-error" viewBox="0 0 13 13">
           <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
           <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
           <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
@@ -42,13 +32,7 @@
         <span class="product-form__error-message"></span>
       </div>
 
-      {%- form 'product',
-        product,
-        id: product_form_id,
-        class: 'form',
-        novalidate: 'novalidate',
-        data-type: 'add-to-cart-form'
-      -%}
+      {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
         <input
           type="hidden"
           name="id"
@@ -78,21 +62,16 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            style="
-              background-color: {{ section.settings.button_color }};
-              color: {{ section.settings.button_font_color }};
-              font-style: {% if section.settings.button_font_style == 'italic' %}italic{% else %}normal{% endif %};
-              font-weight: {% if section.settings.button_font_style == 'bold' %}bold{% else %}normal{% endif %};
-            "
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
+            style="background-color: {{ block.settings.button_background_color }}; color: {{ block.settings.button_font_color }}; font-style: {{ block.settings.button_font_style }}"
           >
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ section.settings.button_text }}
+                {{ block.settings.button_text }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -105,36 +84,3 @@
     </product-form>
   </div>
 </div>
-
-<style>
-  .upsell-box {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  .upsell-top-section {
-    display: flex;
-    align-items: center;
-  }
-  .upsell-image-placeholder {
-    width: 80px;
-    height: 80px;
-    background-color: #ccc;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  .upsell-title h2 {
-    margin: 0;
-  }
-  .upsell-middle-section ul {
-    padding-left: 20px;
-  }
-  .upsell-middle-section li {
-    margin-bottom: 10px;
-  }
-  .upsell-bottom-section {
-    text-align: center;
-    margin-top: 20px;
-  }
-</style>
