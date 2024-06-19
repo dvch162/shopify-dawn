@@ -1,14 +1,14 @@
 <!-- snippets/upsell-product.liquid -->
-<div class="upsell-box" style="background-color: {{ block.settings.box_background_color }}">
+<div class="upsell-box" style="background-color: {{ block.settings.box_background_color }};">
   <div class="upsell-top">
     <img src="{{ 'image-placeholder.jpg' | image_url }}" width="50" height="50" alt="Laces image" class="upsell-image">
-    <div class="upsell-title" style="font-size: {{ block.settings.title_font_size }}; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }}">
+    <div class="upsell-title" style="font-size: {{ block.settings.title_font_size }}px; color: {{ block.settings.title_font_color }}; font-style: {{ block.settings.title_font_style }};">
       {{ block.settings.title_text }}
     </div>
   </div>
 
   <div class="upsell-middle">
-    <ul class="upsell-features" style="font-size: {{ block.settings.bullet_font_size }}">
+    <ul class="upsell-features" style="font-size: {{ block.settings.bullet_font_size }}px;">
       {% assign features = block.settings.bullet_features_text | split: ',' %}
       {% for feature in features %}
         <li>{{ feature | strip }}</li>
