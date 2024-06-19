@@ -16,7 +16,7 @@
   </div>
   <div class="upsell-middle-section">
     <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
-      {% for feature in section.settings.bullet_features_text | split: '\n' %}
+      {% for feature in section.settings.bullet_features_text | split: ',' %}
         <li>{{ feature }}</li>
       {% endfor %}
     </ul>
