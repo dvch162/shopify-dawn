@@ -16,7 +16,7 @@
   </div>
   <div class="upsell-middle-section">
 
- {% assign bullet_features = section.settings.bullet_features_text | split: '\n' %}
+ {% assign bullet_features = section.settings.bullet_features_text  %}
     <ul style="font-size: {{ section.settings.bullet_features_font_size }};">
       {% for feature in bullet_features %}
         <li>{{ feature }}</li>
