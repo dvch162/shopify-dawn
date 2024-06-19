@@ -81,7 +81,7 @@
             "title_font_color": "#000000",
             "title_font_size": 18,
             "title_font_style": "bold",
-            "bullet_features_text": "Feature description 1\nFeature description 2",
+            "bullet_features_text": "Feature description 1",
             "bullet_features_font_size": "16px",
             "button_text": "Add to Cart",
             "button_color": "#007bff",
