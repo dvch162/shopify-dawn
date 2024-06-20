@@ -90,9 +90,10 @@
             {%- case block.type -%}
 
 
-
+{% comment %}
                {%- when 'upsell-box' -%}
                 {% render 'upsell-product' %}
+{% endcomment %}
 
               
               {%- when '@app' -%}
